@@ -4,6 +4,7 @@
 #include <lvgl.h> /* 9.2.2 */
 #include <Arduino_GFX_Library.h> /* 1.5.0 */
 #include "TAMC_GT911.h" /* 1.0.2 */
+#include "modbusMas.h"
 
 // Configuration for Display and Touch
 #define TFT_BL 2
@@ -41,6 +42,32 @@ lv_color_t *disp_draw_buf;
 uint32_t millis_cb(void)
 {
   return millis();
+}
+
+
+void sw1Event(lv_event_t *e)
+{
+  toggleRelay(lv_obj_has_state(ui_Switch1, LV_STATE_CHECKED), 0);
+}
+
+void sw2Event(lv_event_t *e)
+{
+  toggleRelay(lv_obj_has_state(ui_Switch2, LV_STATE_CHECKED), 1);
+}
+
+void sw3Event(lv_event_t *e)
+{
+  toggleRelay(lv_obj_has_state(ui_Switch3, LV_STATE_CHECKED), 2);
+}
+
+void sw4Event(lv_event_t *e)
+{
+  toggleRelay(lv_obj_has_state(ui_Switch4, LV_STATE_CHECKED), 3);
+}
+
+void btn2hEvent(lv_event_t *e)
+{
+
 }
 
 void my_disp_flush(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)

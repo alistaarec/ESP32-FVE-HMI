@@ -1,24 +1,41 @@
+#include "WiFi.h"
+#include "Arduino.h"
+
 #include "display.h"
+#include "ui.h"
+#include "wificonn.h"
+#include "ntp_synch.h"
+#include "modbusMas.h"
+
+unsigned long lastTime;
+unsigned long lastTimeMod;
+int ntpDelay = 1000;
+int modDelay = 10;
 
 void setup()
 {
+  Serial1.begin(9600);
+  wifiConfig();
   setup_display();
+  ui_init();
+  lv_scr_load(ui_Screen1);
+  lv_timer_handler();
 
-  lv_obj_t *label = lv_label_create(lv_scr_act());
-  lv_label_set_text(label, "Hello Arduino, I'm LVGL!");
-  lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+  setupNtp();
 
-  lv_obj_t * btn1 = lv_button_create(lv_screen_active());
-  lv_obj_add_event_cb(btn1, NULL, LV_EVENT_ALL, NULL);
-  lv_obj_align(btn1, LV_ALIGN_CENTER, 0, -40);
-  lv_obj_remove_flag(btn1, LV_OBJ_FLAG_PRESS_LOCK);
+  modbusSetup();
 
-  lv_obj_t * btn1label = lv_label_create(btn1);
-  lv_label_set_text(btn1label, "Button");
-  lv_obj_center(btn1label);
+
 }
 
 void loop()
 {
+  if(millis() > lastTime + ntpDelay) {
+    updateTimeDisp();
+    lastTime = millis();
+  }
+  mbtask();
   loop_display();
+
+
 }
