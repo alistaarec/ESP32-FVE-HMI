@@ -12,7 +12,7 @@ void wifiConfig() {
     WiFi.begin(ssid, pass);
     while (WiFi.status() != WL_CONNECTED) {
         Serial.println("Connecting...");
-        delay(250);
+        delay(500);
     }
     Serial.println("Connected");
 }

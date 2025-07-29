@@ -23,6 +23,7 @@ void setupNtp() {
 void updateTimeDisp() {
     Serial.println(ntp.formattedTime("%A %T")); // Www hh:mm:ss
     lv_label_set_text(ui_ntpTime, ntp.formattedTime("%T"));
+    lv_label_set_text(ui_ntpTime2, ntp.formattedTime("%T"));
 }
 
 #endif

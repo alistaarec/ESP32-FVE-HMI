@@ -15,17 +15,29 @@ extern void ui_Screen1_screen_init(void);
 extern void ui_Screen1_screen_destroy(void);
 extern lv_obj_t * ui_Screen1;
 extern lv_obj_t * ui_Label1;
+extern void ui_event_Switch1(lv_event_t * e);
 extern lv_obj_t * ui_Switch1;
+extern void ui_event_Switch2(lv_event_t * e);
 extern lv_obj_t * ui_Switch2;
 extern lv_obj_t * ui_Label2;
 extern lv_obj_t * ui_Label3;
+extern void ui_event_Switch3(lv_event_t * e);
 extern lv_obj_t * ui_Switch3;
 extern lv_obj_t * ui_Panel3;
+extern void ui_event_Switch4(lv_event_t * e);
 extern lv_obj_t * ui_Switch4;
 extern lv_obj_t * ui_Image2;
 extern lv_obj_t * ui_ntpTime;
+extern void ui_event_btn2h(lv_event_t * e);
 extern lv_obj_t * ui_btn2h;
+extern lv_obj_t * ui_timeBar1;
+extern void ui_event_Label4(lv_event_t * e);
 extern lv_obj_t * ui_Label4;
+extern void ui_event_Image1(lv_event_t * e);
+extern lv_obj_t * ui_Image1;
+extern lv_obj_t * ui_battBar;
+extern lv_obj_t * ui_Image3;
+extern lv_obj_t * ui_battState;
 // CUSTOM VARIABLES
 
 #ifdef __cplusplus

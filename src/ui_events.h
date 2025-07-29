@@ -10,6 +10,15 @@
 extern "C" {
 #endif
 
+void sw1Event(lv_event_t * e);
+void sw2Event(lv_event_t * e);
+void sw3Event(lv_event_t * e);
+void sw4Event(lv_event_t * e);
+void btn2hEvent(lv_event_t * e);
+void btn2htxt(lv_event_t * e);
+void poolTimeSet(lv_event_t * e);
+void saveSettings(lv_event_t * e);
+
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif

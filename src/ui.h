@@ -30,6 +30,7 @@ extern "C" {
 ///////////////////// SCREENS ////////////////////
 
 #include "ui_Screen1.h"
+#include "ui_Screen2.h"
 
 ///////////////////// VARIABLES ////////////////////
 
@@ -40,6 +41,8 @@ extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_home_png);    // assets/home.png
+LV_IMG_DECLARE(ui_img_settings_png);    // assets/settings.png
+LV_IMG_DECLARE(ui_img_batt_png);    // assets/batt.png
 
 // FONTS
 LV_FONT_DECLARE(ui_font_Sans);
